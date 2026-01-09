@@ -8,11 +8,13 @@ SmartCare-32 is an integrated embedded firmware solution developed for the DU Me
 🚀 Key Features
 
 1. Patient Record Management
+   
    -Structured Initialization: Allocates 28-byte structures in RAM (starting at 0x20000000) for patient data including ID, Age, Ward, and Treatment codes.
    
    -Triage Sorting: Implements a Descending Bubble Sort algorithm to prioritize patients based on their Alert_Count, ensuring critical cases are handled first.
 
-3. Real-Time Vital Monitoring
+2. Real-Time Vital Monitoring
+   
    -Rolling Buffers: Maintains a history of the last 10 readings for Heart Rate (HR), Blood Pressure (BP), and Oxygen (O_2).
    
    -Circular Logic: Uses modulo-style index wrapping to manage memory efficiently.
@@ -25,7 +27,8 @@ SmartCare-32 is an integrated embedded firmware solution developed for the DU Me
    
        -BP > 160 or < 90 mmHg6.
 
-5. Automated Billing Engine
+3. Automated Billing Engine
+   
    -Treatment LUT: Maps treatment codes to costs using a high-speed Lookup Table.
 
    -Discount Logic: Calculates room rent with a 5% discount for stays exceeding 10 days using fixed-point integer     math.
@@ -34,7 +37,8 @@ SmartCare-32 is an integrated embedded firmware solution developed for the DU Me
 
    -Overflow Protection: Employs BVS (Branch if Overflow Set) instructions to ensure financial calculations stay within valid 32-bit bounds.
 
-6. Safety & Communication
+4. Safety & Communication
+   
    -Anomaly Detection: Identifies "Stuck Sensors" (repeated values) and monitors for memory overflows near the        RAM boundary.
 
    -UART Reporting: Converts internal binary data to ASCII strings for transmission to a serial terminal, providing a real-time summary of patient status.
@@ -123,6 +127,7 @@ Offset 20: Medicine List Pointer (Word)
 Offset 24: Alert Count (Word/Used for Triage)
 
 🖥️ How to Run
+
 1. Open Keil uVision 5.
 2. Create a new project targeting an ARM Cortex-M4 processor.
 3. Add all .s files from this repository to the project.
