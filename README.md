@@ -100,11 +100,17 @@ Visualizing the Patient Structure (28 Bytes)
 Each patient record is carefully aligned in memory to ensure efficient 32-bit access by the ARM processor:
 
 Offsets 0-3: Patient ID (Word)
+
 Offset 8: Age (Byte)
+
 Offset 10: Ward Number (Halfword)
+
 Offset 12: Treatment Code (Byte)
+
 Offset 16: Daily Room Rate (Word)
+
 Offset 20: Medicine List Pointer (Word)
+
 Offset 24: Alert Count (Word/Used for Triage)
 
 🖥️ How to Run
